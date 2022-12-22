@@ -1,0 +1,53 @@
+{% extends 'core_page.html' %}
+{% load static %}
+
+    {% block content %} 
+
+        <div class="d-flex flex-row w-100 min-vh-100 my-parallax justify-content-around align-items-center">
+            <div class="jumbotron bg-dark mx-5 p-5 text-white">
+                <h1 class="display-4 pb-3 text-center">✨ Agendinha do bem ✨</h1>
+                <p class="lead">Tema escolhido: Agenda de tarefas</p>
+                <hr class="my-4">
+                <p>Objetivo: Idealizamos esse projeto pensando na dificuldade que algumas pessoas enfrentam de se organizar em relação a tarefas e tempo de maneira simples e objetiva, com a possibilidade de exportação para uma ferramenta mais robusta.</p>
+                <div class="d-flex align-items-center">
+                    <button type="button" class="btn btn-outline-warning  btn-lg" ><a href="#devs" class="text-decoration-none text-white">👇 Fale conosco! 👇</a></button>
+                </div>
+                
+              </div>
+        </div>
+    
+        <div class="d-flex flex-row w-100 my-parallax min-vh-100 justify-content-around align-items-center" id="devs">
+
+             <div class="d-flex flex-column p-5 mx-5 bg-dark">
+                <div class="card text-center shadow-lg">
+                    <img src="{% static 'images/ana.jpg'%}" class="card-img-top img-thumbnail p-5" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Ana Vitória Eichenberger Teixeira</h5>
+                            <p class="card-text">2840481911002</p>
+                            <a href="https://api.whatsapp.com/send?phone=5516981760003&text=Olá" class="btn btn-lg btn-outline-success fab fa-whatsapp" target="_blank"></a>
+                            <a href="https://www.linkedin.com/in/anavieich/" class="btn btn-lg btn-outline-info fab fa-linkedin-in" target="_blank"></a>
+                            <a href="https://www.facebook.com/anavitoria.eichenbergerteixeira.7" class="btn btn-lg btn-outline-primary fab fa-facebook-f" target="_blank"></a>
+                            <a href="https://www.instagram.com/anavieich/" class="btn btn-lg btn-outline-danger fab fa-instagram" target="_blank"></a>
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="d-flex flex-colum p-5 mx-5 bg-dark">
+                <div class="card text-center shadow-lg">
+                    <img src="{% static 'images/rick.jpg'%}" class="card-img-top img-thumbnail p-5" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Henrique Ribeiro dos Santos</h5>
+                        <p class="card-text">2840481821014</p>
+                        <a href="https://api.whatsapp.com/send?phone=5516996692867&text=Olá" class="btn btn-lg btn-outline-success fab fa-whatsapp" target="_blank"></a>
+                        <a href="https://www.linkedin.com/in/kadoltech/" class="btn btn-lg btn-outline-info fab fa-linkedin-in" target="_blank"></a>
+                        <a href="https://www.facebook.com/KadolTech" class="btn btn-lg btn-outline-primary fab fa-facebook-f" target="_blank"></a>
+                        <a href="https://www.instagram.com/_dahak/" class="btn btn-lg btn-outline-danger fab fa-instagram" target="_blank"></a>
+                    </div>
+                </div>
+            </div>   
+                
+        </div>
+
+        
+    {% endblock %}
+    {% include "core_footer.html" %}

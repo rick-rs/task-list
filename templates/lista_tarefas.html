@@ -1,0 +1,28 @@
+{% extends "core_page.html" %}
+{% block content  %}
+
+<div class="d-flex flex-column justify-content-top align-items-center w-100 min-vh-100 p-5 my-parallax">
+    <div class="align-items-left w-75 pb-2">
+        <a href="tarefa/"><button type="button" class="btn btn-dark"> <i class="fas fa-plus-circle"></i> </button></a>
+    </div>
+    
+    {% for tarefa in tarefas %}
+        
+        <div class="card w-75 mb-2 bg-dark shadow-lg">
+           
+                <div class="card-body" role="tab-list">
+                    <h5 class="card-title text-light">{{ tarefa.titulo }} {% if tarefa.get_tarefa_atrasada %} <i class="fas fa-exclamation-circle text-danger"></i>  {% endif %}</h5>
+                    <p class="card-text text-light">{{ tarefa.descricao }}</p>
+                    <p class="card-text text-light">Data : {{ tarefa.data_expiracao }}</p>
+                    
+                    <a href="tarefa/?id={{ tarefa.id }}" class="btn btn-primary"> ✏️ </a>
+                    <a href="tarefa/delete/{{ tarefa.id }}" class="btn btn-danger"> 🗑️ </a>
+                    
+                </div>
+
+        </div>
+    {% endfor %}
+</div>
+
+
+{% endblock %}

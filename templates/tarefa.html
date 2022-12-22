@@ -1,0 +1,36 @@
+{% extends "core_page.html" %}
+{% block content %}
+    
+        <form class="d-flex flex-column w-100 p-5 justify-content-top align-items-center min-vh-100 my-parallax" action="submit" method="POST"> {% csrf_token %}
+            <div class="align-items-left w-75 pb-2 bg-dark pt-4 px-5 rounded-top">
+                <div class="form-row w-100"> 
+                    <div class="form-group text-light pb-4 ">
+                        <label for="titulo">Titulo</label>
+                        <input type="number" name="id_tarefa" value="{{tarefa.id}}" hidden>
+                        <input type="text" class="form-control" id="titulo" placeholder="Titulo" name="titulo" value={{tarefa.titulo}}>
+                    </div>
+                    <div class="form-group text-light pb-4">
+                        <label for="descricao">Descrição</label>
+                        <textarea  class="form-control" id="descricao" placeholder="Descrição" rows=5 name="descricao">{{tarefa.descricao}}</textarea>
+                    </div>
+                </div>
+                <div class="form-group w-100 text-light pb-4">
+                    <label for="date">Data</label>
+                    <input type="datetime-local" class="form-control" id="date" name="date" value={{tarefa.get_data_expiracao}}>
+                </div>
+            </div>    
+            <div class="d-flex flex-row justify-content-evenly form-group w-75 text-light text-decoration-none px-5 pb-4 bg-dark rounded-bottom">
+                <div class="d-flex flex-column pe-2 mx-auto w-50" >
+                    <a class="w-100 h-100" href="/">
+                        <button type="submit" class="btn btn-secondary w-100 h-100"> 🔒 Salvar </button>
+                    </a>
+                </div>
+                    
+                <div class="d-flex flex-column ps-2 mx-auto w-50" >
+                    <a href="/">
+                        <button type="button" class="btn btn-danger w-100 h-100"> ⚠️ Cancelar </button>
+                    </a>
+                </div>
+            </div>
+        </form>
+{% endblock %}

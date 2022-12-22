@@ -1,0 +1,35 @@
+{% load static %}
+
+<title>Lista de Tarefas</title>
+
+<header class="d-flex border-bottom border-bottom border-light bg-dark fixed-top">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center align-items-center mb-md-0">
+          
+          <li><a href="/lista_tarefas/" class="nav-link px-2 link-light">✔️ Tarefas</a></li>
+        </ul>
+  
+        <form class="d-flex flex-row col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3 justify-content-between" method=POST action="{% url 'search' %}">
+        {% csrf_token %}
+          <input type="search" class="form-control mx-2 my-2" id="search" name="search" placeholder="Buscar tarefas..." aria-label="Buscar">
+          <button type="submit" class="btn btn-outline-light mx-2 my-2"> 🔍 </button>
+        </form>
+
+        <div class="dropdown text-end">
+          
+          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle border border-light">
+          </a>
+          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
+            <li><a class="dropdown-item" href="/lista_tarefas/import">Importar dados</a></li>
+            <li><a class="dropdown-item" href="/lista_tarefas/export">Exportar dados</a></li>
+            <li><a class="dropdown-item" href="/sobre/">Sobre nós</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="/logout"> 🚪 Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>

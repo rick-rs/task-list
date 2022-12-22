@@ -1,0 +1,26 @@
+{% extends 'core_page.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex flex-row my-parallax min-vh-100 text-center align-items-center justify-content-center">
+        <div class="container">
+            <div class="row w-50 m-auto">
+                <div class="col bg-dark rounded-3 p-5">
+                    <h2 class="text-light p-2">Bem vindo a exportação de tarefas! 😉</h2>
+                    <h3 class="text-light p-2">Selecione um formato abaixo para baixar seu arquivo.</h3>
+                    <form  class="pb-4" action="export" method="POST"> {% csrf_token %}
+                        <div class="input-group bg-dark text-white">
+                            <select class="form-select bg-dark text-white" id="option" name="option">
+                              <option selected>Escolha o formato de arquivo...</option>
+                              <option value="json">json</option>
+                              <option value="csv">csv</option>
+                              <option value="xls">xls</option>
+                            </select>
+                            <button class="btn btn-lg btn-outline-light " type="export"> <i class="fas fa-cloud-download-alt"></i></button>
+                          </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

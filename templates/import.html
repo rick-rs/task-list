@@ -1,0 +1,26 @@
+{% extends 'core_page.html' %}
+{% load static %}
+
+{% block content %}
+<div class="d-flex flex-row my-parallax min-vh-100 text-center align-items-center justify-content-center">
+    <div class="container">
+        <div class="row w-50 m-auto">
+            <div class="col bg-dark rounded-3 p-5">
+                <h2 class="text-light p-2">Bem vindo a importação de tarefas! 😉</h2>
+                <h3 class="text-light p-2">Selecione um formato abaixo para importar seu arquivo.</h3>
+                <form class="pb-4" action="import" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+                    <div class="my-3 input-group ">
+                        <input class="form-control bg-dark text-white" type="file" id="file" name="file" accept="application/vnd.ms-excel, text/csv, application/json">
+                        <button class="btn btn-outline-light" type="submit"> <i class="fas fa-cloud-upload-alt"></i></button>
+                    </div>
+                    {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message.message }}
+                            </div>
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
